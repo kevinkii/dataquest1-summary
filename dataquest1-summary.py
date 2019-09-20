@@ -39,8 +39,8 @@ row1 = ["Facebook", 0.0, "USA", 2857673, 3.5] #creating a list
 row2 = ["Instagram", 0.0, "USA", 2567673, 4.5] #creating a list
 data = [row1, row2] #creating a list of lists
 first_row = data[0]
-first_element_in_first_row = data[0][0] #`first_row[0]`
-last_element_in_first_row = data[0][-1] #`first_row[-1]`
+first_element_in_first_row = data[0][0] # or `first_row[0]`
+last_element_in_first_row = data[0][-1] # or `first_row[-1]`
 
 # %% [markdown]
 # ## Data Slicing
@@ -49,15 +49,27 @@ last_element_in_first_row = data[0][-1] #`first_row[-1]`
 import numpy as np
 x = np.arange(10)
 x # it is the same as the positive index
-
+#%%
 x[0] #the fist element
+#%%
 x[-1] #the last element
+#%%
 x[:5] #first five element
+#%%
+x[:-5] #first five element
+#%%
 x[5:] #element after index 5
+#%%
+x[-5:] #last five element
+#%%
 x[1:5] #from index 1 to index 4
+#%%
 x[::2] #every other element
+#%%
 x[1::2] #every other element, starting from index 1
+#%%
 x[::-1] #all element, reverse
+#%%
 x[5::-2] #reverse every other element from index 5
 
 # %% [markdown]
