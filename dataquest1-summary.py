@@ -39,14 +39,22 @@ pritn(motto)
 
 
 # %% [markdown]
-# `a_list[m:n]`, where
-# * `m` represents the index number of the first element
-# * `n` represents the index number of the last element + 1
+# ## Data Slicing
+# `x[start:stop:step]`
 #
+# `x[:5]` first five element
 #
-# `a_list[:x]` when we want to select the first `x` elements.
+# `x[5:]` element after index 5
 #
-# `a_list[-x:]` when we want to select the last `x` elements.
+# `x[1:5]` from index 1 to index 4
+# 
+# `x[::2]` every other element
+#
+# `x[1::2]` every other element, starting from index 1
+#
+# `x[::-1]` all element, reverse
+#
+# `x[5::-2]` reverse every other element from index 5
 
 # %% [markdown]
 # data_set[0][1] = the second element of the fisrt row in the data_set
@@ -57,6 +65,8 @@ pritn(motto)
 # ## How to read file using "reader"
 #
 # `from csv import reader`
+#
+# `opened_file = open('AppleStore.csv`
 #
 # `read_file = reader()`
 #
@@ -107,7 +117,139 @@ print(True or False)
 print(False or True)
 print(False or False)
 
-# %%
+#%% [markdown]
+# ## `Dictionary` in the Python
+# To create the dictionary, we use `{}`:
+# * Mapped each content rating to its corresponding number by following an `index:value` pattern. For instance, to map a rating of `'4+'` to the number 4,433, we type `'4'+:4433`
+# * Typed the entire sequence of `index:value` pairs, and separated each with a comma: `{'4+':4433, '9+':987, '12+':1155, '17+':662}`
+# * To get the value of the dictionary, we type `data_set['4+']`
+#
+#
+# To create the dictionary via adding one by one, we:
+# * We create an empty dictionary (`{}`) or list (`()`)
+# * We add values using the `dictionary_name[index] = value` technique (or the `list_name.append()` command in case of a list)
+#
+#
+# The index of a dictionary value is called a **Key**, then a whole `'4+':4433` is a **key-value pair**
+#
+# Dictionary key can be of almost any data type, but lists and dictionaries.
+#
+# Dictionary value can be of any data type: strings, integers, floats, booleans, lists, and dictionaries.
+#
+# We use the `in` **operator** to check whether a key exists in a dictionary.
 
+# %% [markdown]
+# To find out the minimum and the maximum values of a column, we can use the `min()` and the `max()` command.
 
-# %%
+#%%
+list1 = {1, 8, 10, 9, 7, 5}
+
+sum1 = 0
+for element in list1:
+    sum1 += element
+print(sum1)
+
+#%%
+sum_1 = sum(list1)
+print(sum_1)
+
+#%% [markdown]
+# ## Creating a function
+
+def square(a_number):
+    squared_number = a_number * a_number
+    return squared_number
+
+def square(a_number):
+    return a_number * a_number
+
+def add(a, b):
+    a_sum = a + b
+    return a_sum
+
+def freq_table(index, data):
+    frequency_table = {}
+    for row in data[1:]:
+        column = row[index]
+        if column in frequency_table:
+            frequency_table[column] += 1
+        else:
+            frequency_table[column] = 1
+    return frequency_table
+
+def sum_or_difference1(a,b):
+    a_sum = a + b
+    difference = a - b
+    return a_sum, difference #the output return as `tuple`
+
+def sum_or_difference2(a,b):
+    a_sum = a + b
+    difference = a - b
+    return [a_sum, difference] #the output return as `list`
+
+#%% [markdown]
+# The **tuple** is a data type that is very similar to a list, where is usually used for storing multiple values.
+
+#%%
+a_list = [1, 'a', 10.5]
+a_tuple1 = (1, 'a', 10.5)
+a_tuple2 = 1, 'a'
+
+#%% [markdown]
+# **Immutable** data types is a data type where we can't change their state after they've been created.
+# **Mutable** data types is a data type where we can change their state after they've been created.
+#
+# | **Mutable** | **Immutable** |
+# | ----- | ---- |
+# | Lists | Tuples |
+# | Dictionaries | Integers |
+# | | Floats | 
+# | | Strings | 
+# | | Booleans | 
+
+#%%
+a_tuple = 1, 2
+first_element = a_tuple[0]
+second_element = a_tuple[1]
+
+first_element, second_element = a_tuple
+
+#%%
+a_list = 1, 2
+first_element = a_list[0]
+second_element = a_list[1]
+
+first_element, second_element = a_list
+
+#%% [markdown]
+# ## Temporary memory in Python
+# Below code will follow the function and ignore the main program
+
+#%%
+a_sum = 1000
+length = 50
+
+def divide():
+    print(a_sum)
+    print(length)
+    return a_sum / length
+
+result = divide()
+print(result)
+
+#%% [markdown]
+# Below code instead will rewrite `a_sum` and `length`, then follow the function
+
+#%%
+a_sum = 1000
+length = 50
+
+def divide():
+    a_sum = 15
+    length = 3
+    print(a_sum)
+    print(length)
+    return a_sum / length
+
+result = divide()
+print(result)
