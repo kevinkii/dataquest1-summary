@@ -1,5 +1,5 @@
 # %% [markdown]
-#  Python Basic Code
+#  ##Python Basic Code
 
 # %%
 a_value = 15
@@ -24,13 +24,8 @@ print(a_result + a_value)
 # the integer `2` has the `int` type, and the deciamal number `8.5` has the `float` type
 
 # %%
-motto = 'Facebook's old motto was "move fast and break things."'
-print(motto)
-# it will show the `SyntaxError: invalid syntax`
-
-# %%
 motto = 'Facebook\'s old motto was "move fast and break things."'
-pritn(motto)
+print(motto)
 
 # %% [markdown]
 # In python, we have two indexing system for lists:
