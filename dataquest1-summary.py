@@ -283,14 +283,14 @@ a_tuple2 = 1, 'a'
 # | | Booleans | 
 
 #%%
-a_tuple = 1, 2
+a_tuple = (1, 2)
 first_element = a_tuple[0]
 second_element = a_tuple[1]
 
 first_element, second_element = a_tuple
 
 #%%
-a_list = 1, 2
+a_list = [1, 2]
 first_element = a_list[0]
 second_element = a_list[1]
 
